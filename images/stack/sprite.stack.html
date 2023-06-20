@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>SVG stack preview | svg-sprite</title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                color: #666;
+                background: #fafafa;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1em;
+                line-height: 1.4;
+            }
+
+            header {
+                display: block;
+                padding: 3em 3em 2em;
+                background-color: #fff;
+            }
+
+            header p {
+                margin: 2em 0 0;
+            }
+
+            section {
+                border-top: 1px solid #eee;
+                padding: 2em 3em 0;
+            }
+
+            section ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            section li {
+                display: inline-block;
+                background-color: #fff;
+                position: relative;
+                margin: 0 2em 2em 0;
+                vertical-align: top;
+                border: 1px solid #ccc;
+                padding: 1em 1em 3em;
+                cursor: default;
+            }
+
+            .icon-box {
+                margin: 0;
+                width: 144px;
+                height: 144px;
+                position: relative;
+                background: #ccc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cpath fill='%23fff' d='M6 0h6v6H6zM0 6h6v6H0z'/%3E%3C/svg%3E") top left repeat;
+                border: 1px solid #ccc;
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+            }
+
+            .icon {
+                display: inline-block;
+            }
+
+            h1 {
+                margin-top: 0;
+            }
+
+            h2 {
+                margin: 0;
+                padding: 0;
+                font-size: 1em;
+                font-weight: 400;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                position: absolute;
+                left: 1em;
+                right: 1em;
+                bottom: 1em;
+            }
+
+            footer {
+                display: block;
+                margin: 0;
+                padding: 0 3em 3em;
+            }
+
+            footer p {
+                margin: 0;
+                font-size: .7em;
+            }
+
+            footer a {
+                color: #0f7595;
+                margin-left: 0;
+            }
+        </style>
+
+<!--
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as stack SVGs, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+-->
+
+<style>
+ .svg-about-bg-after-dims { width: 55px; height: 55px; }
+ .svg-about-bg-before-dims { width: 147px; height: 147px; }
+ .svg-blog-link1-dims { width: 19px; height: 21px; }
+ .svg-blog-link2-dims { width: 19px; height: 18px; }
+ .svg-blog-more-dims { width: 23px; height: 10px; }
+ .svg-contact-icon1-dims { width: 13px; height: 19px; }
+ .svg-contact-icon2-dims { width: 16px; height: 16px; }
+ .svg-contact-icon3-dims { width: 18px; height: 12px; }
+ .svg-facebook-dims { width: 16px; height: 15px; }
+ .svg-instagram-dims { width: 13px; height: 13px; }
+ .svg-play-video-dims { width: 130px; height: 130px; }
+ .svg-play-watch-dims { width: 64px; height: 65px; }
+ .svg-populer-icon-1-dims { width: 12px; height: 13px; }
+ .svg-populer-icon-2-dims { width: 18px; height: 12px; }
+ .svg-populer-icon-3-dims { width: 18px; height: 13px; }
+ .svg-services-icon1-dims { width: 54px; height: 54px; }
+ .svg-services-icon2-dims { width: 56px; height: 49px; }
+ .svg-services-icon3-dims { width: 55px; height: 52px; }
+ .svg-services-icon4-dims { width: 50px; height: 50px; }
+ .svg-services-icon5-dims { width: 59px; height: 50px; }
+ .svg-services-icon6-dims { width: 70px; height: 50px; }
+ .svg-touch-1-dims { width: 98px; height: 98px; }
+ .svg-touch-2-dims { width: 79px; height: 79px; }
+ .svg-twitter-dims { width: 17px; height: 14px; }
+</style>
+
+<!--
+====================================================================================================
+-->
+
+    </head>
+    <body>
+        <header>
+            <h1>SVG stack preview</h1>
+            <p>This preview features an SVG stack. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+            <ul>
+                <li>Your browser has to <a href="https://caniuse.com/svg-fragment" target="_blank" rel="noopener noreferrer">support SVG fragment identifiers</a> for SVG stacks to work.</li>
+                <li>Support for SVG fragment identifiers hasn't always been that decent. For older browsers you will have to use some prolyfill like <a href="https://github.com/preciousforever/SVG-Stacker/blob/master/fixsvgstack.jquery.js" target="_blank" rel="noopener noreferrer">fixsvgstack.jquery.js</a>.</li>
+            </ul>
+        </header>
+        <section>
+
+<!--
+SVG stack
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) to reference certain portions of the
+external sprite. By default, all shapes inside the sprite are hidden by CSS. The `:target` pseudo
+selector is used to show the very shape that is referenced by the fragment identifier.
+-->
+
+            <ul>
+
+             <li title="about-bg-after">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#about-bg-after" class="svg-about-bg-after-dims" alt="about-bg-after">
+                    </div>
+                    <h2>about-bg-after, </h2>
+                </li>
+             <li title="about-bg-before">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#about-bg-before" class="svg-about-bg-before-dims" alt="about-bg-before">
+                    </div>
+                    <h2>about-bg-before, </h2>
+                </li>
+             <li title="blog-link1">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#blog-link1" class="svg-blog-link1-dims" alt="blog-link1">
+                    </div>
+                    <h2>blog-link1, </h2>
+                </li>
+             <li title="blog-link2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#blog-link2" class="svg-blog-link2-dims" alt="blog-link2">
+                    </div>
+                    <h2>blog-link2, </h2>
+                </li>
+             <li title="blog-more">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#blog-more" class="svg-blog-more-dims" alt="blog-more">
+                    </div>
+                    <h2>blog-more, </h2>
+                </li>
+             <li title="contact-icon1">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#contact-icon1" class="svg-contact-icon1-dims" alt="contact-icon1">
+                    </div>
+                    <h2>contact-icon1, </h2>
+                </li>
+             <li title="contact-icon2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#contact-icon2" class="svg-contact-icon2-dims" alt="contact-icon2">
+                    </div>
+                    <h2>contact-icon2, </h2>
+                </li>
+             <li title="contact-icon3">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#contact-icon3" class="svg-contact-icon3-dims" alt="contact-icon3">
+                    </div>
+                    <h2>contact-icon3, </h2>
+                </li>
+             <li title="facebook">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#facebook" class="svg-facebook-dims" alt="facebook">
+                    </div>
+                    <h2>facebook, </h2>
+                </li>
+             <li title="instagram">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#instagram" class="svg-instagram-dims" alt="instagram">
+                    </div>
+                    <h2>instagram, </h2>
+                </li>
+             <li title="play-video">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#play-video" class="svg-play-video-dims" alt="play-video">
+                    </div>
+                    <h2>play-video, </h2>
+                </li>
+             <li title="play-watch">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#play-watch" class="svg-play-watch-dims" alt="play-watch">
+                    </div>
+                    <h2>play-watch, </h2>
+                </li>
+             <li title="populer-icon-1">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#populer-icon-1" class="svg-populer-icon-1-dims" alt="populer-icon-1">
+                    </div>
+                    <h2>populer-icon-1, </h2>
+                </li>
+             <li title="populer-icon-2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#populer-icon-2" class="svg-populer-icon-2-dims" alt="populer-icon-2">
+                    </div>
+                    <h2>populer-icon-2, </h2>
+                </li>
+             <li title="populer-icon-3">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#populer-icon-3" class="svg-populer-icon-3-dims" alt="populer-icon-3">
+                    </div>
+                    <h2>populer-icon-3, </h2>
+                </li>
+             <li title="services-icon1">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#services-icon1" class="svg-services-icon1-dims" alt="services-icon1">
+                    </div>
+                    <h2>services-icon1, </h2>
+                </li>
+             <li title="services-icon2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#services-icon2" class="svg-services-icon2-dims" alt="services-icon2">
+                    </div>
+                    <h2>services-icon2, </h2>
+                </li>
+             <li title="services-icon3">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#services-icon3" class="svg-services-icon3-dims" alt="services-icon3">
+                    </div>
+                    <h2>services-icon3, </h2>
+                </li>
+             <li title="services-icon4">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#services-icon4" class="svg-services-icon4-dims" alt="services-icon4">
+                    </div>
+                    <h2>services-icon4, </h2>
+                </li>
+             <li title="services-icon5">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#services-icon5" class="svg-services-icon5-dims" alt="services-icon5">
+                    </div>
+                    <h2>services-icon5, </h2>
+                </li>
+             <li title="services-icon6">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#services-icon6" class="svg-services-icon6-dims" alt="services-icon6">
+                    </div>
+                    <h2>services-icon6, </h2>
+                </li>
+             <li title="touch-1">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#touch-1" class="svg-touch-1-dims" alt="touch-1">
+                    </div>
+                    <h2>touch-1, </h2>
+                </li>
+             <li title="touch-2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#touch-2" class="svg-touch-2-dims" alt="touch-2">
+                    </div>
+                    <h2>touch-2, </h2>
+                </li>
+             <li title="twitter">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#twitter" class="svg-twitter-dims" alt="twitter">
+                    </div>
+                    <h2>twitter, </h2>
+                </li>
+         </ul>
+
+<!--
+====================================================================================================
+-->
+
+        </section>
+        <footer>
+            <p>Generated at Sat, 17 Jun 2023 03:29:38 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+        </footer>
+    </body>
+</html>
